@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eternal AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <header class="header">
+            <button class="nav-icon">←</button>
+            <div class="model-selector">
+                <span>Eternal 4</span>
+                <span class="chevron">▾</span>
+            </div>
+            <div class="empty"></div>
+        </header>
+
+        <main class="content">
+            <div class="logo-box">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 30L65 30L85 55L40 55L20 30Z" fill="#0055A4"/>
+                    <path d="M40 55L85 55L65 80L20 80L40 55Z" fill="#8ECAE6"/>
+                    <path d="M40 55L65 30L85 55L65 80L40 55Z" fill="#0077B6" fill-opacity="0.8"/>
+                </svg>
+            </div>
+            <h1 class="main-text">How can I help you <br> this afternoon?</h1>
+        </main>
+
+        <footer class="footer">
+            <div class="chat-container">
+                <button class="action-btn plus">+</button>
+                <input type="text" placeholder="Chat with Coren..." class="chat-input">
+                <button class="voice-btn">
+                    <div class="wave-icon">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker Registered'))
+                    .catch(err => console.log('SW Registration Failed', err));
+            });
+        }
+    </script>
+</body>
+</html>
